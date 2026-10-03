@@ -1,0 +1,14 @@
+const r = require('express').Router();
+const c = require('../controllers/loyaltyController');
+const { protect } = require('../middleware/authMiddleware');
+const { allow } = require('../middleware/roleMiddleware');
+r.use(protect);
+r.get('/my-cards', allow('customer'), c.myCards);
+r.post('/programs', allow('business'), c.createProgram);
+r.get('/programs/:id', c.getProgram);
+r.put('/programs/:id', allow('business'), c.updateProgram);
+r.delete('/programs/:id', allow('business'), c.deleteProgram);
+r.post('/programs/:id/join', allow('customer'), c.join);
+r.post('/stamp', allow('business'), c.stamp);
+r.post('/cards/:id/redeem', allow('customer'), c.redeem);
+module.exports = r;

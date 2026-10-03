@@ -1,0 +1,13 @@
+@layer base {
+  *, ::after, ::before, ::backdrop { border-color: var(--color-slate-200, currentColor); }
+  html, body { margin: 0; padding: 0; }
+  body { overscroll-behavior: none; font-family: var(--font-body); }
+  main > :first-child { margin-top: 0 !important; }
+  main > :last-child { margin-bottom: 0 !important; }
+}
+::-webkit-scrollbar { display: none; }
+@utility label-caps { font-size: 11px; line-height: 14px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+@keyframes thunk { 0% { transform: scale(2) rotate(-20deg); opacity: 0; } 60% { transform: scale(.92); opacity: 1; } 100% { transform: scale(1); } }
+@keyframes rise { from { transform: translateY(-8px); opacity: 0; } to { transform: none; opacity: 1; } }
+.thunk { animation: thunk .45s cubic-bezier(.2,.9,.3,1.2) both; }
+.rise { animation: rise .25s ease-out both; }
