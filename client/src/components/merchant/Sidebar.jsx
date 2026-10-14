@@ -37,6 +37,8 @@ export default function Sidebar() {
             <NavLink key={i.to} to={i.to} end={i.to === '/business'} className={({ isActive }) => (isActive ? ACTIVE : IDLE)}>
               <span className="material-symbols-outlined text-[20px]">{i.icon}</span>{i.label}
             </NavLink>))}
-        </nav></div></div><div className="px-space-md flex flex-col gap-space-sm"><div className="bg-surface-container-lowest p-space-md rounded-xl shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] flex items-center justify-between"><div className="flex flex-col"><span className="font-label-caps text-label-caps text-on-surface-variant uppercase">Terminal Node</span><span className="font-label-md text-label-md text-on-surface flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span>Active Online</span></div><span className="font-label-caps text-label-caps bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full">POS-04</span></div></div></aside>
+
+        </nav>
+        </div></div></aside>
   );
 }

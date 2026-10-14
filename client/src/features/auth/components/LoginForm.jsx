@@ -32,12 +32,7 @@ export default function LoginForm({ portal, onAuth }) {
         <PasswordInput id="password" label={p.passwordLabel} autoComplete="current-password" placeholder="••••••••••••"
           value={form.password} onChange={setField('password')} error={errors.password}
           action={<Link to="/forgot-password" className="text-xs font-semibold text-primary hover:underline">Forgot password?</Link>} />
-        {portal === 'merchant' && (
-          <label className="flex items-start gap-2.5 p-3 rounded-lg bg-surface-container-low cursor-pointer">
-            <input type="checkbox" checked={remember} onChange={(e) => setRemember(e.target.checked)} className="mt-0.5 w-4 h-4 accent-primary-container" />
-            <span><span className="text-sm font-semibold block">Branch Terminal Quick-Access</span>
-              <span className="text-xs text-on-surface-variant block">Remember this cashier terminal for rapid 4-digit PIN unlock during shift handovers.</span></span>
-          </label>)}
+        
         <button disabled={busy} className="w-full h-11 rounded-lg bg-primary-container hover:bg-primary text-on-primary text-sm font-semibold flex items-center justify-center gap-1 shadow-md hover:shadow-lg active:scale-[0.99] disabled:opacity-60 transition-all">
           {busy ? <Loader2 size={18} className="animate-spin" /> : <>{p.submit}<ArrowRight size={20} /></>}
         </button>
